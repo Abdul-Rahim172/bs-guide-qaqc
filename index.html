@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>BS GUIDE</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1a2980">
+    <meta name="description" content="BS GUIDE - Quality Assurance and Quality Control Application">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BS GUIDE">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- PWA Install Prompt -->
+    <div id="installPrompt" style="display: none; position: fixed; top: 0; left: 0; right: 0; background: #1a2980; color: white; padding: 10px; text-align: center; z-index: 10000;">
+        <span>Install BS GUIDE app for better experience</span>
+        <button id="installBtn" style="margin-left: 10px; padding: 5px 10px; background: white; color: #1a2980; border: none; border-radius: 3px; cursor: pointer;">Install</button>
+        <button id="dismissBtn" style="margin-left: 5px; padding: 5px 10px; background: transparent; color: white; border: 1px solid white; border-radius: 3px; cursor: pointer;">Dismiss</button>
+    </div>
+
+    <div class="top-controls">
+        <!-- New App Title/Logo Section -->
+        <div class="app-title">
+            <div class="app-logo">
+                <img src="logo.png" alt="BS GUIDE Logo" onerror="this.style.display='none'">
+            </div>
+            <h1>BS GUIDE</h1>
+        </div>
+        
+        <!-- Buttons Section - All moved to the right -->
+        <div class="buttons-section">
+            <button id="benchmarkButton" title="Benchmarks">
+                <i class="fas fa-sliders-h"></i>
+            </button>
+            
+            <button id="themeButton" title="Change Theme">
+                <i class="fas fa-paint-brush"></i>
+            </button>
+            
+            <label id="fileInputLabel" title="Import Excel">
+                <input type="file" id="fileInput" accept=".xlsx,.xls,.csv,.txt" />
+                <i class="fas fa-file-import"></i>
+            </label>
+            <label id="loadProgressLabel" title="Load Progress">
+                <input type="file" id="loadProgressInput" accept=".rah" />
+                <i class="fas fa-folder-open"></i>
+            </label>
+            <button id="saveProgressButton" title="Save Progress">
+                <i class="fas fa-save"></i>
+            </button>
+            <button id="saveAsButton" title="Save As">
+                <i class="fas fa-copy"></i>
+            </button>
+            <button id="exportButton" title="Export">
+                <i class="fas fa-file-export"></i>
+            </button>
+            <button id="insightsButton" title="Insights">
+                <i class="fas fa-lightbulb"></i>
+            </button>
+            <button id="downloadPDFBtn" title="Download PDF">
+                <i class="fas fa-file-pdf"></i>
+            </button>
+            <button id="toggleIdsButton" title="Toggle IDs">
+                <i class="fas fa-id-card"></i>
+            </button>
+            <button id="toggleLengthsButton" title="Toggle Lengths">
+                <i class="fas fa-ruler"></i>
+            </button>
+            <button id="fitViewButton" title="Fit View">
+                <i class="fas fa-expand"></i>
+            </button>
+            
+            <!-- Point Size Controls -->
+            <button id="increasePointSizeButton" title="Increase Point Size">
+                <i class="fas fa-plus-circle"></i>
+            </button>
+            <button id="decreasePointSizeButton" title="Decrease Point Size">
+                <i class="fas fa-minus-circle"></i>
+            </button>
+            
+            <!-- Label Position Controls -->
+            <button id="labelUpButton" title="Move Labels Up">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <button id="labelDownButton" title="Move Labels Down">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+            <button id="labelLeftButton" title="Move Labels Left">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button id="labelRightButton" title="Move Labels Right">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="complianceContainer">
+            <div id="insightsContent">
+                <div id="burdenCompliance" class="compliance-text"></div>
+                <div id="spacingCompliance" class="compliance-text"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Benchmark Dialog -->
+    <div id="benchmarkDialog" class="modal">
+        <div class="modal-content" id="draggableDialog">
+            <div class="modal-header" id="dialogHeader">
+                <h2>Benchmark Settings</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="dialogBurdenInput">Burden:</label>
+                    <input type="number" id="dialogBurdenInput" step="0.1" value="4.7" />
+                </div>
+                <div class="input-group">
+                    <label for="dialogSpacingInput">Spacing:</label>
+                    <input type="number" id="dialogSpacingInput" step="0.1" value="5.2" />
+                </div>
+                <div class="input-group">
+                    <label for="dialogStemmingInput">Stemming:</label>
+                    <input type="number" id="dialogStemmingInput" step="0.1" value="3.2" />
+                </div>
+                
+                <div class="separator-line"></div>
+                <h3>Tolerance Settings</h3>
+                
+                <div class="input-group">
+                    <label for="dialogBurdenToleranceInput">Burden Tolerance:</label>
+                    <input type="number" id="dialogBurdenToleranceInput" step="0.1" value="0.3" />
+                </div>
+                <div class="input-group">
+                    <label for="dialogSpacingToleranceInput">Spacing Tolerance:</label>
+                    <input type="number" id="dialogSpacingToleranceInput" step="0.1" value="0.3" />
+                </div>
+                <div class="input-group">
+                    <label for="dialogStemmingToleranceInput">Stemming Tolerance:</label>
+                    <input type="number" id="dialogStemmingToleranceInput" step="0.1" value="0.3" />
+                </div>
+                <div class="input-group">
+                    <label for="dialogLengthToleranceInput">Length Tolerance:</label>
+                    <input type="number" id="dialogLengthToleranceInput" step="0.1" value="0.5" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="applyBenchmarkButton">Apply</button>
+                <button id="cancelBenchmarkButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Selector Dropdown -->
+    <div id="themeDropdown" class="theme-dropdown">
+        <div class="theme-title">Select Theme</div>
+        <div class="theme-option" data-theme="default">
+            <div class="color-preview default-theme"></div>
+            <span>Default</span>
+        </div>
+        <div class="theme-option" data-theme="ocean">
+            <div class="color-preview ocean-theme"></div>
+            <span>Ocean Depths</span>
+        </div>
+        <div class="theme-option" data-theme="sunset">
+            <div class="color-preview sunset-theme"></div>
+            <span>Warm Sunset</span>
+        </div>
+        <div class="theme-option" data-theme="forest">
+            <div class="color-preview forest-theme"></div>
+            <span>Forest</span>
+        </div>
+        <div class="theme-option" data-theme="desert">
+            <div class="color-preview desert-theme"></div>
+            <span>Desert</span>
+        </div>
+        <div class="theme-option" data-theme="royal">
+            <div class="color-preview royal-theme"></div>
+            <span>Royal</span>
+        </div>
+        <div class="theme-option" data-theme="neon">
+            <div class="color-preview neon-theme"></div>
+            <span>Neon</span>
+        </div>
+        <div class="theme-option" data-theme="mint">
+            <div class="color-preview mint-theme"></div>
+            <span>Mint</span>
+        </div>
+        <div class="theme-option" data-theme="autumn">
+            <div class="color-preview autumn-theme"></div>
+            <span>Autumn</span>
+        </div>
+        <div class="theme-option" data-theme="night">
+            <div class="color-preview night-theme"></div>
+            <span>Night Mode</span>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; padding: 20px; border-radius: 8px; z-index: 10001;">
+        <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

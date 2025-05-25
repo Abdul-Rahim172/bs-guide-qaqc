@@ -1,0 +1,1126 @@
+/* Theme Variables - Default theme */
+:root {
+    --main-bg-start: #1a2980;
+    --main-bg-end: #26d0ce;
+    --point-color: rgba(20, 30, 97, 0.95);
+    --point-color-selected: rgba(0, 180, 180, 1.0);
+    --dialog-header-start: #1a2980;
+    --dialog-header-end: #26d0ce;
+    --container-bg: rgba(255, 255, 255, 0.92);
+    --text-color: #333;
+    --button-gradient-1: #5cdbd3;
+    --button-gradient-2: #1890ff;
+    --button-text: white;
+}
+
+/* Ocean Depths Theme */
+.ocean-theme-active {
+    --main-bg-start: #0F2027;
+    --main-bg-end: #2C5364;
+    --point-color: rgba(15, 32, 39, 0.95);
+    --point-color-selected: rgba(52, 152, 219, 1.0);
+    --dialog-header-start: #0F2027;
+    --dialog-header-end: #2C5364;
+    --container-bg: rgba(240, 248, 255, 0.92);
+    --text-color: #25374a;
+    --button-gradient-1: #3498db;
+    --button-gradient-2: #2980b9;
+    --button-text: white;
+}
+
+/* Warm Sunset Theme */
+.sunset-theme-active {
+    --main-bg-start: #FF416C;
+    --main-bg-end: #FF9966;
+    --point-color: rgba(153, 51, 51, 0.95);
+    --point-color-selected: rgba(255, 153, 102, 1.0);
+    --dialog-header-start: #FF416C;
+    --dialog-header-end: #FF9966;
+    --container-bg: rgba(255, 255, 255, 0.92);
+    --text-color: #5a2323;
+    --button-gradient-1: #ff9a9e;
+    --button-gradient-2: #fad0c4;
+    --button-text: #5a2323;
+}
+
+/* Forest Theme */
+.forest-theme-active {
+    --main-bg-start: #134E5E;
+    --main-bg-end: #71B280;
+    --point-color: rgba(19, 78, 94, 0.95);
+    --point-color-selected: rgba(113, 178, 128, 1.0);
+    --dialog-header-start: #134E5E;
+    --dialog-header-end: #71B280;
+    --container-bg: rgba(242, 255, 243, 0.92);
+    --text-color: #134e5e;
+    --button-gradient-1: #71b280;
+    --button-gradient-2: #134e5e;
+    --button-text: white;
+}
+
+/* Desert Theme */
+.desert-theme-active {
+    --main-bg-start: #BA8B02;
+    --main-bg-end: #FFDE0A;
+    --point-color: rgba(129, 97, 7, 0.95);
+    --point-color-selected: rgba(244, 208, 63, 1.0);
+    --dialog-header-start: #BA8B02;
+    --dialog-header-end: #FFDE0A;
+    --container-bg: rgba(255, 252, 235, 0.92);
+    --text-color: #694e01;
+    --button-gradient-1: #f4d03f;
+    --button-gradient-2: #ba8b02;
+    --button-text: #694e01;
+}
+
+/* Royal Theme */
+.royal-theme-active {
+    --main-bg-start: #5C258D;
+    --main-bg-end: #4389A2;
+    --point-color: rgba(92, 37, 141, 0.95);
+    --point-color-selected: rgba(155, 89, 182, 1.0);
+    --dialog-header-start: #5C258D;
+    --dialog-header-end: #4389A2;
+    --container-bg: rgba(245, 242, 255, 0.92);
+    --text-color: #3a1b58;
+    --button-gradient-1: #9b59b6;
+    --button-gradient-2: #8e44ad;
+    --button-text: white;
+}
+
+/* Neon Theme */
+.neon-theme-active {
+    --main-bg-start: #000000;
+    --main-bg-end: #434343;
+    --point-color: rgba(0, 0, 0, 0.95);
+    --point-color-selected: rgba(0, 255, 255, 1.0);
+    --dialog-header-start: #000000;
+    --dialog-header-end: #434343;
+    --container-bg: rgba(32, 32, 32, 0.92);
+    --text-color: #00ffff;
+    --button-gradient-1: #00ffff;
+    --button-gradient-2: #00cccc;
+    --button-text: #000000;
+}
+
+/* Mint Theme */
+.mint-theme-active {
+    --main-bg-start: #2193b0;
+    --main-bg-end: #6dd5ed;
+    --point-color: rgba(33, 147, 176, 0.95);
+    --point-color-selected: rgba(109, 213, 237, 1.0);
+    --dialog-header-start: #2193b0;
+    --dialog-header-end: #6dd5ed;
+    --container-bg: rgba(242, 255, 253, 0.92);
+    --text-color: #1a7590;
+    --button-gradient-1: #6dd5ed;
+    --button-gradient-2: #2193b0;
+    --button-text: white;
+}
+
+/* Autumn Theme */
+.autumn-theme-active {
+    --main-bg-start: #8E2DE2;
+    --main-bg-end: #E1A829;
+    --point-color: rgba(142, 45, 226, 0.95);
+    --point-color-selected: rgba(225, 168, 41, 1.0);
+    --dialog-header-start: #8E2DE2;
+    --dialog-header-end: #E1A829;
+    --container-bg: rgba(255, 249, 235, 0.92);
+    --text-color: #663399;
+    --button-gradient-1: #e1a829;
+    --button-gradient-2: #8e2de2;
+    --button-text: white;
+}
+
+/* Night Mode Theme */
+.night-theme-active {
+    --main-bg-start: #111111;
+    --main-bg-end: #333333;
+    --point-color: rgba(24, 24, 24, 0.95);
+    --point-color-selected: rgba(66, 134, 244, 1.0);
+    --dialog-header-start: #111111;
+    --dialog-header-end: #333333;
+    --container-bg: rgba(32, 32, 32, 0.92);
+    --text-color: #f0f0f0;
+    --button-gradient-1: #4286f4;
+    --button-gradient-2: #373B44;
+    --button-text: white;
+}
+
+/* Add font-face for Algerian if you want to ensure it's available */
+@font-face {
+    font-family: 'Algerian';
+    src: url('algerian.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--main-bg-start) 0%, var(--main-bg-end) 100%);
+    overflow-x: hidden;
+    color: var(--text-color);
+    /* PWA-specific improvements */
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* PWA Install Prompt Styles */
+#installPrompt {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+#installBtn, #dismissBtn {
+    transition: all 0.2s ease;
+}
+
+#installBtn:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-1px);
+}
+
+#dismissBtn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* PWA Loading Indicator */
+#loadingIndicator {
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+#loadingIndicator i {
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Touch-friendly improvements for mobile */
+button, input, select, textarea {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Improved touch targets for mobile */
+button {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+/* Modified Top Controls to include app title and adjust button layout */
+.top-controls {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between; /* Changed from center to space-between */
+    align-items: center;
+    padding: 10px 20px; /* Added horizontal padding */
+    background-color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    gap: 5px;
+    overflow-x: auto;
+    /* PWA safe area support */
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+}
+
+/* New App Title Styles */
+.app-title {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+/* Logo styles */
+.app-logo {
+    margin-right: 15px;
+}
+
+.app-logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.app-title h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(to right, var(--main-bg-start), var(--main-bg-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Algerian', 'Copperplate Gothic', 'Copperplate', serif;
+    text-transform: uppercase;
+}
+
+/* Add stylish text effects to the title */
+.app-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--main-bg-start), var(--main-bg-end));
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Buttons Section */
+.buttons-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+@media (max-width: 1400px) {
+    .top-controls {
+        justify-content: space-between; /* Keep space-between on smaller screens */
+    }
+    
+    .buttons-section {
+        flex-wrap: wrap;
+    }
+}
+
+.input-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 0 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+
+.button-container {
+    margin-left: 0;
+}
+
+#burdenInput, #spacingInput, #stemmingInput {
+    width: 60px;
+    padding: 6px;
+    font-size: 1em;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#burdenInput:focus, #spacingInput:focus, #stemmingInput:focus {
+    border-color: #26d0ce;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+}
+
+.input-container label {
+    margin-right: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#fileInput, #loadProgressInput {
+    display: none;
+}
+
+/* Ensure all buttons have exactly the same dimensions */
+#fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+#increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box; /* This ensures padding is included in width/height */
+    margin: 0 2px;
+    /* PWA touch improvements */
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#fileInputLabel:hover, #loadProgressLabel:hover, #exportButton:hover, #toggleIdsButton:hover, 
+#toggleLengthsButton:hover, #fitViewButton:hover, #saveAsButton:hover, #benchmarkButton:hover, #themeButton:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Active/pressed state for better touch feedback */
+#fileInputLabel:active, #loadProgressLabel:active, #exportButton:active, #toggleIdsButton:active, 
+#toggleLengthsButton:active, #fitViewButton:active, #saveAsButton:active, #benchmarkButton:active, #themeButton:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#fileInputLabel i, #loadProgressLabel i, #saveProgressButton i, #saveAsButton i, #exportButton i, #insightsButton i, 
+#toggleIdsButton i, #toggleLengthsButton i, #fitViewButton i, #benchmarkButton i, #themeButton i {
+    margin: 0;
+}
+
+#insightsButton.active, #toggleIdsButton.active, #toggleLengthsButton.active {
+    background: linear-gradient(145deg, #ffec99, #ffda4a);
+    box-shadow: 0 0 15px rgba(255, 234, 0, 0.4), 0 0 20px rgba(255, 234, 0, 0.2);
+    color: #d17d00;
+}
+
+#saveProgressButton {
+    background: linear-gradient(145deg, #e6f7ff, #bae7ff);
+    color: #0066cc;
+}
+
+#saveProgressButton:hover {
+    background: linear-gradient(145deg, #bae7ff, #91d5ff);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#saveAsButton {
+    background: linear-gradient(145deg, #d6e4ff, #adc6ff);
+    color: #0050b3;
+}
+
+#saveAsButton:hover {
+    background: linear-gradient(145deg, #adc6ff, #85a5ff);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#loadProgressLabel {
+    background: linear-gradient(145deg, #e6ffec, #b7eb8f);
+    color: #008800;
+}
+
+#loadProgressLabel:hover {
+    background: linear-gradient(145deg, #b7eb8f, #95de64);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.container {
+    text-align: center;
+    background: var(--container-bg);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    width: 96vw;
+    height: 88vh;
+    max-width: 1400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 75px auto 10px; /* Added margin-top to make room for top controls */
+    backdrop-filter: blur(5px);
+    /* PWA safe area support */
+    margin-bottom: max(10px, env(safe-area-inset-bottom));
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    max-width: 100%;
+    /* Touch improvements for chart interaction */
+    touch-action: pan-x pan-y;
+}
+
+#myChart {
+    width: 100% !important;
+    height: 100% !important;
+    /* Improve touch responsiveness */
+    touch-action: pan-x pan-y;
+}
+
+.text-box {
+    position: absolute;
+    width: 170px;
+    padding: 10px;
+    font-size: 12px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+    /* PWA touch improvements */
+    touch-action: manipulation;
+}
+
+.text-box input {
+    width: calc(100% - 20px);
+    padding: 8px; /* Increased for better touch targets */
+    margin-top: 6px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+    /* PWA touch improvements */
+    min-height: 32px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    -webkit-appearance: none;
+}
+
+.text-box input:focus {
+    border-color: #26d0ce;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+}
+
+.close-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 6px 10px; /* Increased for better touch targets */
+    font-size: 12px;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    transition: background-color 0.2s;
+    /* PWA touch improvements */
+    min-height: 32px;
+    min-width: 32px;
+    touch-action: manipulation;
+}
+
+.close-button:hover {
+    background-color: #ff1f1f;
+}
+
+.borehole-id, .borehole-length {
+    position: absolute;
+    font-size: 10px;
+    color: black;
+    pointer-events: none;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.9); /* White outline for readability */
+}
+
+.borehole-length {
+    margin-top: 12px;
+}
+
+.compliance-text {
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 12px;
+    background-color: var(--container-bg);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    max-height: 65vh;
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+    /* PWA improvements */
+    -webkit-overflow-scrolling: touch;
+}
+
+#complianceContainer {
+    display: none;
+}
+
+.red {
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.green {
+    color: #52c41a;
+    font-weight: bold;
+}
+
+#spacingCompliance {
+    margin-top: 30px;
+}
+
+.separator {
+    width: 1px;
+    height: 30px;
+    background-color: #e0e0e0;
+    margin: 0 5px;
+}
+
+.position-controls {
+    display: flex;
+    gap: 5px;
+}
+
+#increasePointSizeButton, #decreasePointSizeButton,
+#labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    transition: all 0.2s ease;
+    /* PWA touch improvements */
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+#increasePointSizeButton:hover, #decreasePointSizeButton:hover,
+#labelUpButton:hover, #labelDownButton:hover, #labelLeftButton:hover, #labelRightButton:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#increasePointSizeButton {
+    color: #389e0d;
+}
+
+#decreasePointSizeButton {
+    color: #cf1322;
+}
+
+#labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton {
+    color: #1890ff;
+}
+
+/* Responsive media query - updated for the new layout */
+@media (max-width: 768px) {
+    .top-controls {
+        flex-direction: column;
+        padding: 5px;
+        /* Adjust for mobile safe areas */
+        padding-top: max(5px, env(safe-area-inset-top));
+    }
+
+    .app-title {
+        padding: 10px 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .app-title h1 {
+        font-size: 24px;
+    }
+    
+    .app-logo img {
+        height: 35px;
+    }
+
+    .buttons-section {
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+        gap: 3px; /* Reduced gap for mobile */
+    }
+
+    .button-container {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 95vw;
+        height: 85vh;
+        margin-top: 140px;
+        /* Mobile safe area adjustments */
+        margin-bottom: max(10px, env(safe-area-inset-bottom));
+        padding: 10px; /* Reduced padding for mobile */
+    }
+
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 38px; /* Slightly larger for better touch */
+        height: 38px;
+        min-width: 44px; /* Ensure minimum touch target */
+        min-height: 44px;
+        font-size: 1.1em;
+        margin: 0 1px; /* Reduced margin */
+    }
+
+    .input-container {
+        margin: 3px;
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .text-box {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .text-box input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 10px; /* Better touch targets */
+    }
+
+    .compliance-text {
+        position: static;
+        max-height: none;
+        margin-top: 20px;
+        font-size: 14px; /* Slightly smaller for mobile */
+    }
+    
+    .separator {
+        display: none;
+    }
+    
+    .position-controls {
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+    .app-title h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .buttons-section {
+        gap: 2px;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 36px;
+        height: 36px;
+        font-size: 1em;
+    }
+    
+    .container {
+        margin-top: 160px; /* More space for condensed controls */
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .top-controls {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 5px 10px;
+    }
+    
+    .app-title {
+        padding: 5px 10px 5px 0;
+    }
+    
+    .app-title h1 {
+        font-size: 20px;
+    }
+    
+    .container {
+        margin-top: 80px;
+        height: calc(100vh - 90px);
+    }
+}
+
+#downloadPDFBtn {
+    background: linear-gradient(145deg, #fff1f0, #ffa39e);
+    color: #cf1322;
+}
+
+#downloadPDFBtn:hover {
+    background: linear-gradient(145deg, #ffa39e, #ff7875);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* PWA safe area support */
+    bottom: max(20px, env(safe-area-inset-bottom));
+    max-width: 90vw;
+    text-align: center;
+}
+
+.toast-message.show {
+    opacity: 1;
+}
+
+/* Benchmark Dialog Styles */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+    /* PWA improvements */
+    backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: absolute;
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    padding: 0;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    border-radius: 12px;
+    animation: slideIn 0.3s;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* PWA safe area support */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -30px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.modal-header {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--dialog-header-start) 0%, var(--dialog-header-end) 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    cursor: move; /* Indicate it's draggable */
+    /* PWA improvements */
+    touch-action: none; /* Prevent scrolling during drag */
+    user-select: none;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+    /* PWA improvements */
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    text-align: right;
+    border-radius: 0 0 12px 12px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    /* PWA touch improvements */
+    padding: 5px;
+    min-height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close:hover {
+    color: #ffcccc;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    width: 160px;
+    font-weight: bold;
+    color: var(--text-color);
+    /* Mobile improvements */
+    font-size: 14px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px; /* Increased for better touch */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    transition: border-color 0.3s;
+    /* PWA improvements */
+    -webkit-appearance: none;
+    min-height: 40px;
+}
+
+.input-group input:focus {
+    border-color: #26d0ce;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+}
+
+.separator-line {
+    margin: 20px 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+}
+
+#applyBenchmarkButton, #cancelBenchmarkButton {
+    padding: 12px 20px; /* Increased for better touch */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s;
+    /* PWA improvements */
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+#applyBenchmarkButton {
+    background: linear-gradient(135deg, var(--dialog-header-start) 0%, var(--dialog-header-end) 100%);
+    color: white;
+    margin-left: 10px;
+}
+
+#applyBenchmarkButton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#cancelBenchmarkButton {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+#cancelBenchmarkButton:hover {
+    background-color: #e0e0e0;
+}
+
+#benchmarkButton {
+    background: linear-gradient(145deg, #5cdbd3, #1890ff);
+    color: white;
+}
+
+#themeButton {
+    background: linear-gradient(145deg, var(--button-gradient-1), var(--button-gradient-2));
+    color: var(--button-text);
+}
+
+/* Theme Dropdown Styles */
+.theme-dropdown {
+    position: absolute;
+    background: white;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: none;
+    max-height: 400px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    right: auto;
+    left: 10px;
+    top: 65px;
+    /* PWA improvements */
+    -webkit-overflow-scrolling: touch;
+    backdrop-filter: blur(5px);
+}
+
+.theme-title {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.theme-option {
+    padding: 12px 15px; /* Increased for better touch */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    /* PWA improvements */
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+.theme-option:hover {
+    background-color: #f5f5f5;
+}
+
+.theme-option:active {
+    background-color: #e8e8e8;
+}
+
+.color-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+/* Color previews for each theme */
+.default-theme {
+    background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+}
+
+.ocean-theme {
+    background: linear-gradient(135deg, #0F2027 0%, #2C5364 100%);
+}
+
+.sunset-theme {
+    background: linear-gradient(135deg, #FF416C 0%, #FF9966 100%);
+}
+
+.forest-theme {
+    background: linear-gradient(135deg, #134E5E 0%, #71B280 100%);
+}
+
+.desert-theme {
+    background: linear-gradient(135deg, #BA8B02 0%, #FFDE0A 100%);
+}
+
+.royal-theme {
+    background: linear-gradient(135deg, #5C258D 0%, #4389A2 100%);
+}
+
+.neon-theme {
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
+    border: 1px solid #00ffff;
+}
+
+.mint-theme {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.autumn-theme {
+    background: linear-gradient(135deg, #8E2DE2 0%, #E1A829 100%);
+}
+
+.night-theme {
+    background: linear-gradient(135deg, #111111 0%, #333333 100%);
+    border: 1px solid #4286f4;
+}
+
+/* PWA-specific media queries for different orientations and screen sizes */
+@media (orientation: portrait) and (max-width: 768px) {
+    .theme-dropdown {
+        width: calc(100vw - 40px);
+        left: 20px;
+        right: 20px;
+        max-width: 320px;
+    }
+}
+
+/* PWA support for notched devices */
+@supports (padding: max(0px)) {
+    .top-controls {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+        padding-top: max(10px, env(safe-area-inset-top));
+    }
+    
+    .container {
+        margin-bottom: max(10px, env(safe-area-inset-bottom));
+    }
+    
+    .toast-message {
+        bottom: max(20px, env(safe-area-inset-bottom));
+        left: max(20px, env(safe-area-inset-left));
+        right: max(20px, env(safe-area-inset-right));
+        transform: none;
+    }
+}
