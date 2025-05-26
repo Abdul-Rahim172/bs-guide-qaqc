@@ -235,43 +235,46 @@ button {
     touch-action: manipulation;
 }
 
-/* Modified Top Controls to include app title and adjust button layout */
+/* Modified Top Controls to keep everything on one row */
 .top-controls {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between; /* Changed from center to space-between */
+    flex-wrap: nowrap; /* NEVER wrap to multiple rows */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Added horizontal padding */
+    padding: 8px 15px; /* Reduced padding */
     background-color: rgba(255, 255, 255, 0.92);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     z-index: 100;
     backdrop-filter: blur(5px);
-    gap: 5px;
-    overflow-x: auto;
+    gap: 10px; /* Space between title and buttons */
+    overflow: hidden; /* Prevent any overflow */
+    height: 50px; /* Fixed height to prevent growing */
     /* PWA safe area support */
-    padding-top: max(10px, env(safe-area-inset-top));
-    padding-left: max(20px, env(safe-area-inset-left));
-    padding-right: max(20px, env(safe-area-inset-right));
+    padding-top: max(8px, env(safe-area-inset-top));
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
 }
 
-/* New App Title Styles */
+/* Compact App Title Styles for single row */
 .app-title {
     display: flex;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 10px; /* Reduced padding */
+    flex-shrink: 0; /* Don't let title shrink */
+    min-width: 120px; /* Minimum space for title */
 }
 
-/* Logo styles */
+/* Compact Logo styles */
 .app-logo {
-    margin-right: 15px;
+    margin-right: 8px; /* Reduced margin */
 }
 
 .app-logo img {
-    height: 40px;
+    height: 32px; /* Smaller logo */
     width: auto;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -279,9 +282,9 @@ button {
 
 .app-title h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 22px; /* Smaller font */
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px; /* Reduced letter spacing */
     position: relative;
     color: transparent;
     background: linear-gradient(to right, var(--main-bg-start), var(--main-bg-end));
@@ -290,6 +293,7 @@ button {
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     font-family: 'Algerian', 'Copperplate Gothic', 'Copperplate', serif;
     text-transform: uppercase;
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 /* Add stylish text effects to the title */
@@ -305,27 +309,20 @@ button {
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Buttons Section */
+/* Buttons Section - takes remaining space */
 .buttons-section {
     display: flex;
     align-items: center;
     flex-wrap: nowrap; /* Force single row */
-    gap: 3px; /* Reduced gap */
+    gap: 2px; /* Minimal gap */
     overflow-x: auto; /* Allow horizontal scroll if needed */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
     padding: 2px; /* Small padding for scroll area */
+    flex: 1; /* Take all remaining space */
+    justify-content: flex-end; /* Align buttons to the right */
 }
 
-@media (max-width: 1400px) {
-    .top-controls {
-        justify-content: space-between; /* Keep space-between on smaller screens */
-    }
-    
-    .buttons-section {
-        flex-wrap: nowrap; /* Ensure no wrapping on tablets */
-        overflow-x: auto; /* Allow horizontal scroll if needed */
-    }
-}
+/* Remove old media query - we want consistent single-row layout */
 
 .input-container {
     background: rgba(255, 255, 255, 0.8);
@@ -368,30 +365,30 @@ button {
     display: none;
 }
 
-/* Ensure all buttons have exactly the same dimensions */
+/* Ensure all buttons have compact dimensions for single row */
 #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
 #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
     background: white;
     border: none;
-    border-radius: 8px;
-    padding: 6px; /* Reduced padding */
+    border-radius: 6px; /* Smaller radius */
+    padding: 4px; /* Smaller padding */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     cursor: pointer;
-    font-size: 1.1em; /* Slightly smaller font */
+    font-size: 1em; /* Smaller font */
     color: #444;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 36px; /* Smaller width */
-    height: 36px; /* Smaller height */
+    width: 30px; /* Smaller width */
+    height: 30px; /* Smaller height */
     text-align: center;
     transition: all 0.2s ease;
     box-sizing: border-box;
-    margin: 0 1px; /* Reduced margin */
+    margin: 0 1px; /* Minimal margin */
     flex-shrink: 0; /* Prevent buttons from shrinking */
     /* PWA touch improvements */
-    min-height: 36px; /* Reduced minimum */
-    min-width: 36px; /* Reduced minimum */
+    min-height: 30px;
+    min-width: 30px;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
 }
@@ -461,14 +458,14 @@ button {
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     width: 96vw;
-    height: 88vh;
+    height: calc(100vh - 70px); /* Much smaller header = more plot space */
     max-width: 1400px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 75px auto 10px; /* Added margin-top to make room for top controls */
+    margin: 60px auto 10px; /* Reduced margin-top for compact header */
     backdrop-filter: blur(5px);
     /* PWA safe area support */
     margin-bottom: max(10px, env(safe-area-inset-bottom));
@@ -655,42 +652,44 @@ button {
     color: #1890ff;
 }
 
-/* Responsive media query - updated for the new layout */
+/* Responsive media query - KEEP EVERYTHING ON ONE ROW */
 @media (max-width: 768px) {
     .top-controls {
-        flex-direction: row; /* Keep horizontal layout */
-        padding: 5px;
+        flex-direction: row; /* ALWAYS horizontal */
+        padding: 5px 10px;
+        height: 45px; /* Smaller on mobile */
+        gap: 5px;
         /* Adjust for mobile safe areas */
         padding-top: max(5px, env(safe-area-inset-top));
     }
 
     .app-title {
-        padding: 5px 10px 5px 0; /* Reduced padding */
-        min-width: 120px; /* Ensure title has minimum space */
+        padding-right: 5px;
+        min-width: 100px; /* Smaller minimum width */
     }
 
     .app-title h1 {
-        font-size: 20px; /* Smaller title on mobile */
-        letter-spacing: 1px;
+        font-size: 18px; /* Smaller title on mobile */
+        letter-spacing: 0.5px;
     }
     
     .app-logo img {
-        height: 30px; /* Smaller logo */
+        height: 28px; /* Smaller logo */
     }
 
     .buttons-section {
         flex: 1; /* Take remaining space */
         justify-content: flex-end;
         overflow-x: auto;
-        flex-wrap: nowrap; /* Force single row on mobile too */
-        gap: 2px; /* Smaller gap on mobile */
-        padding-right: 5px; /* Small padding for scroll */
+        flex-wrap: nowrap; /* NEVER wrap */
+        gap: 1px; /* Minimal gap on mobile */
+        padding-right: 5px;
     }
 
     .container {
         width: 95vw;
-        height: calc(100vh - 70px); /* Reduced header height */
-        margin-top: 70px; /* Smaller margin for more plot space */
+        height: calc(100vh - 55px); /* Account for smaller header */
+        margin-top: 50px; /* Much smaller margin for maximum plot space */
         /* Mobile safe area adjustments */
         margin-bottom: max(10px, env(safe-area-inset-bottom));
         padding: 8px; /* Reduced padding for mobile */
@@ -698,19 +697,13 @@ button {
 
     #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
     #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
-        width: 32px; /* Smaller for mobile */
-        height: 32px;
-        min-width: 32px; /* Smaller minimum touch targets for more space */
-        min-height: 32px;
-        font-size: 1em;
+        width: 28px; /* Smaller for mobile */
+        height: 28px;
+        min-width: 28px;
+        min-height: 28px;
+        font-size: 0.9em;
         margin: 0; /* No margin on mobile */
-        padding: 4px; /* Smaller padding */
-    }
-
-    .input-container {
-        margin: 3px;
-        width: 90%;
-        justify-content: space-between;
+        padding: 3px; /* Smaller padding */
     }
 
     .text-box {
@@ -735,91 +728,99 @@ button {
     }
 }
 
-/* Tablet-specific optimizations */
+/* Tablet-specific optimizations - SINGLE ROW LAYOUT */
 @media (min-width: 769px) and (max-width: 1024px) {
     .top-controls {
-        padding: 8px 15px;
-    }
-    
-    .app-title h1 {
-        font-size: 24px;
-    }
-    
-    .buttons-section {
-        gap: 2px; /* Tight spacing for tablets */
-        overflow-x: auto;
-        flex-wrap: nowrap;
-    }
-    
-    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
-    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
-        width: 34px; /* Optimized for tablets */
-        height: 34px;
-        min-width: 34px;
-        min-height: 34px;
-        font-size: 1.05em;
-        margin: 0;
-    }
-    
-    .container {
-        margin-top: 65px; /* Reduced margin for more plot space */
-        height: calc(100vh - 75px); /* Maximize chart area */
-    }
-}
-
-/* Very small mobile devices */
-/* Very small mobile devices */
-@media (max-width: 480px) {
-    .app-title h1 {
-        font-size: 18px; /* Even smaller for tiny screens */
-        letter-spacing: 0.5px;
-    }
-    
-    .app-logo img {
-        height: 25px; /* Smaller logo */
-    }
-    
-    .buttons-section {
-        gap: 1px; /* Minimal gap */
-    }
-    
-    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
-    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
-        width: 28px; /* Very small for tiny screens */
-        height: 28px;
-        min-width: 28px;
-        min-height: 28px;
-        font-size: 0.9em;
-        padding: 2px;
-    }
-    
-    .container {
-        margin-top: 60px; /* Even less margin for maximum plot space */
-        height: calc(100vh - 65px);
-    }
-}
-
-/* Landscape orientation on mobile */
-@media (max-height: 600px) and (orientation: landscape) {
-    .top-controls {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 5px 10px;
+        padding: 6px 12px;
+        height: 48px;
+        gap: 8px;
     }
     
     .app-title {
-        padding: 5px 10px 5px 0;
+        min-width: 110px;
     }
     
     .app-title h1 {
         font-size: 20px;
+        letter-spacing: 0.8px;
+    }
+    
+    .app-logo img {
+        height: 30px;
+    }
+    
+    .buttons-section {
+        gap: 1px; /* Tight spacing for tablets */
+        overflow-x: auto;
+        flex-wrap: nowrap; /* NEVER wrap on tablets */
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 32px; /* Optimized for tablets */
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        font-size: 1em;
+        margin: 0;
+        padding: 4px;
     }
     
     .container {
-        margin-top: 80px;
-        height: calc(100vh - 90px);
+        margin-top: 55px; /* Account for smaller header */
+        height: calc(100vh - 65px); /* Maximize chart area */
     }
 }
+
+/* Very small mobile devices */
+/* Very small mobile devices - STILL SINGLE ROW */
+@media (max-width: 480px) {
+    .top-controls {
+        height: 42px;
+        padding: 4px 8px;
+        gap: 3px;
+    }
+    
+    .app-title {
+        min-width: 80px;
+    }
+    
+    .app-title h1 {
+        font-size: 16px; /* Even smaller for tiny screens */
+        letter-spacing: 0.3px;
+    }
+    
+    .app-logo img {
+        height: 24px; /* Smaller logo */
+    }
+    
+    .buttons-section {
+        gap: 0px; /* No gap for tiny screens */
+        flex: 1;
+        justify-content: flex-end;
+        overflow-x: auto;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 26px; /* Very small for tiny screens */
+        height: 26px;
+        min-width: 26px;
+        min-height: 26px;
+        font-size: 0.85em;
+        padding: 2px;
+        margin: 0;
+    }
+    
+    .container {
+        margin-top: 47px; /* Account for smaller header */
+        height: calc(100vh - 52px); /* Maximum plot space */
+    }
+}
+
+/* Removed landscape media query to maintain consistent single-row layout */
 
 #downloadPDFBtn {
     background: linear-gradient(145deg, #fff1f0, #ffa39e);
