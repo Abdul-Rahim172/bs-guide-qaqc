@@ -1,0 +1,185 @@
+/* MOBILE FIX CSS - Force single row layout */
+
+/* Override existing top-controls */
+.top-controls {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    height: 50px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 8px 15px !important;
+    gap: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Override app title */
+.app-title {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    min-width: 120px !important;
+    padding-right: 10px !important;
+}
+
+.app-title h1 {
+    font-size: 20px !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+}
+
+.app-logo img {
+    height: 30px !important;
+    margin-right: 8px !important;
+}
+
+/* Override buttons section */
+.buttons-section {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 2px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Override all buttons */
+#fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, 
+#exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, 
+#fitViewButton, #downloadPDFBtn, #increasePointSizeButton, #decreasePointSizeButton, 
+#labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, 
+#benchmarkButton, #themeButton {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    margin: 0 1px !important;
+    padding: 4px !important;
+    flex-shrink: 0 !important;
+    font-size: 1em !important;
+}
+
+/* Override container for more space */
+.container {
+    margin-top: 60px !important;
+    height: calc(100vh - 70px) !important;
+}
+
+/* Mobile specific overrides */
+@media (max-width: 768px) {
+    .top-controls {
+        height: 45px !important;
+        padding: 5px 10px !important;
+        gap: 5px !important;
+    }
+    
+    .app-title {
+        min-width: 100px !important;
+    }
+    
+    .app-title h1 {
+        font-size: 18px !important;
+    }
+    
+    .app-logo img {
+        height: 28px !important;
+    }
+    
+    .buttons-section {
+        gap: 1px !important;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, 
+    #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, 
+    #fitViewButton, #downloadPDFBtn, #increasePointSizeButton, #decreasePointSizeButton, 
+    #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, 
+    #benchmarkButton, #themeButton {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        margin: 0 !important;
+        font-size: 0.9em !important;
+    }
+    
+    .container {
+        margin-top: 50px !important;
+        height: calc(100vh - 55px) !important;
+    }
+}
+
+/* Tablet specific overrides */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .top-controls {
+        height: 48px !important;
+        padding: 6px 12px !important;
+    }
+    
+    .app-title h1 {
+        font-size: 20px !important;
+    }
+    
+    .app-logo img {
+        height: 30px !important;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, 
+    #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, 
+    #fitViewButton, #downloadPDFBtn, #increasePointSizeButton, #decreasePointSizeButton, 
+    #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, 
+    #benchmarkButton, #themeButton {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        min-height: 30px !important;
+    }
+    
+    .container {
+        margin-top: 55px !important;
+        height: calc(100vh - 65px) !important;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+    .top-controls {
+        height: 42px !important;
+        padding: 4px 8px !important;
+        gap: 3px !important;
+    }
+    
+    .app-title {
+        min-width: 80px !important;
+    }
+    
+    .app-title h1 {
+        font-size: 16px !important;
+    }
+    
+    .app-logo img {
+        height: 24px !important;
+    }
+    
+    .buttons-section {
+        gap: 0px !important;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, 
+    #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, 
+    #fitViewButton, #downloadPDFBtn, #increasePointSizeButton, #decreasePointSizeButton, 
+    #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, 
+    #benchmarkButton, #themeButton {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        min-height: 26px !important;
+        font-size: 0.85em !important;
+    }
+    
+    .container {
+        margin-top: 47px !important;
+        height: calc(100vh - 52px) !important;
+    }
+}
