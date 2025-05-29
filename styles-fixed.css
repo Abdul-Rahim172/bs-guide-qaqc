@@ -1,0 +1,1001 @@
+/* Theme Variables - Default theme */
+:root {
+    --main-bg-start: #1a2980;
+    --main-bg-end: #26d0ce;
+    --point-color: rgba(20, 30, 97, 0.95);
+    --point-color-selected: rgba(0, 180, 180, 1.0);
+    --dialog-header-start: #1a2980;
+    --dialog-header-end: #26d0ce;
+    --container-bg: rgba(255, 255, 255, 0.92);
+    --text-color: #333;
+    --button-gradient-1: #5cdbd3;
+    --button-gradient-2: #1890ff;
+    --button-text: white;
+}
+
+/* Ocean Depths Theme */
+.ocean-theme-active {
+    --main-bg-start: #0F2027;
+    --main-bg-end: #2C5364;
+    --point-color: rgba(15, 32, 39, 0.95);
+    --point-color-selected: rgba(52, 152, 219, 1.0);
+    --dialog-header-start: #0F2027;
+    --dialog-header-end: #2C5364;
+    --container-bg: rgba(240, 248, 255, 0.92);
+    --text-color: #25374a;
+    --button-gradient-1: #3498db;
+    --button-gradient-2: #2980b9;
+    --button-text: white;
+}
+
+/* Warm Sunset Theme */
+.sunset-theme-active {
+    --main-bg-start: #FF416C;
+    --main-bg-end: #FF9966;
+    --point-color: rgba(153, 51, 51, 0.95);
+    --point-color-selected: rgba(255, 153, 102, 1.0);
+    --dialog-header-start: #FF416C;
+    --dialog-header-end: #FF9966;
+    --container-bg: rgba(255, 255, 255, 0.92);
+    --text-color: #5a2323;
+    --button-gradient-1: #ff9a9e;
+    --button-gradient-2: #fad0c4;
+    --button-text: #5a2323;
+}
+
+/* Forest Theme */
+.forest-theme-active {
+    --main-bg-start: #134E5E;
+    --main-bg-end: #71B280;
+    --point-color: rgba(19, 78, 94, 0.95);
+    --point-color-selected: rgba(113, 178, 128, 1.0);
+    --dialog-header-start: #134E5E;
+    --dialog-header-end: #71B280;
+    --container-bg: rgba(242, 255, 243, 0.92);
+    --text-color: #134e5e;
+    --button-gradient-1: #71b280;
+    --button-gradient-2: #134e5e;
+    --button-text: white;
+}
+
+/* Desert Theme */
+.desert-theme-active {
+    --main-bg-start: #BA8B02;
+    --main-bg-end: #FFDE0A;
+    --point-color: rgba(129, 97, 7, 0.95);
+    --point-color-selected: rgba(244, 208, 63, 1.0);
+    --dialog-header-start: #BA8B02;
+    --dialog-header-end: #FFDE0A;
+    --container-bg: rgba(255, 252, 235, 0.92);
+    --text-color: #694e01;
+    --button-gradient-1: #f4d03f;
+    --button-gradient-2: #ba8b02;
+    --button-text: #694e01;
+}
+
+/* Royal Theme */
+.royal-theme-active {
+    --main-bg-start: #5C258D;
+    --main-bg-end: #4389A2;
+    --point-color: rgba(92, 37, 141, 0.95);
+    --point-color-selected: rgba(155, 89, 182, 1.0);
+    --dialog-header-start: #5C258D;
+    --dialog-header-end: #4389A2;
+    --container-bg: rgba(245, 242, 255, 0.92);
+    --text-color: #3a1b58;
+    --button-gradient-1: #9b59b6;
+    --button-gradient-2: #8e44ad;
+    --button-text: white;
+}
+
+/* Neon Theme */
+.neon-theme-active {
+    --main-bg-start: #000000;
+    --main-bg-end: #434343;
+    --point-color: rgba(0, 0, 0, 0.95);
+    --point-color-selected: rgba(0, 255, 255, 1.0);
+    --dialog-header-start: #000000;
+    --dialog-header-end: #434343;
+    --container-bg: rgba(32, 32, 32, 0.92);
+    --text-color: #00ffff;
+    --button-gradient-1: #00ffff;
+    --button-gradient-2: #00cccc;
+    --button-text: #000000;
+}
+
+/* Mint Theme */
+.mint-theme-active {
+    --main-bg-start: #2193b0;
+    --main-bg-end: #6dd5ed;
+    --point-color: rgba(33, 147, 176, 0.95);
+    --point-color-selected: rgba(109, 213, 237, 1.0);
+    --dialog-header-start: #2193b0;
+    --dialog-header-end: #6dd5ed;
+    --container-bg: rgba(242, 255, 253, 0.92);
+    --text-color: #1a7590;
+    --button-gradient-1: #6dd5ed;
+    --button-gradient-2: #2193b0;
+    --button-text: white;
+}
+
+/* Autumn Theme */
+.autumn-theme-active {
+    --main-bg-start: #8E2DE2;
+    --main-bg-end: #E1A829;
+    --point-color: rgba(142, 45, 226, 0.95);
+    --point-color-selected: rgba(225, 168, 41, 1.0);
+    --dialog-header-start: #8E2DE2;
+    --dialog-header-end: #E1A829;
+    --container-bg: rgba(255, 249, 235, 0.92);
+    --text-color: #663399;
+    --button-gradient-1: #e1a829;
+    --button-gradient-2: #8e2de2;
+    --button-text: white;
+}
+
+/* Night Mode Theme */
+.night-theme-active {
+    --main-bg-start: #111111;
+    --main-bg-end: #333333;
+    --point-color: rgba(24, 24, 24, 0.95);
+    --point-color-selected: rgba(66, 134, 244, 1.0);
+    --dialog-header-start: #111111;
+    --dialog-header-end: #333333;
+    --container-bg: rgba(32, 32, 32, 0.92);
+    --text-color: #f0f0f0;
+    --button-gradient-1: #4286f4;
+    --button-gradient-2: #373B44;
+    --button-text: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--main-bg-start) 0%, var(--main-bg-end) 100%);
+    overflow-x: hidden;
+    color: var(--text-color);
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* PWA Install Prompt Styles */
+#installPrompt {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+#installBtn, #dismissBtn {
+    transition: all 0.2s ease;
+}
+
+#installBtn:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-1px);
+}
+
+#dismissBtn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* PWA Loading Indicator */
+#loadingIndicator {
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+#loadingIndicator i {
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Touch-friendly improvements for mobile */
+button, input, select, textarea {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+button {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+/* SINGLE ROW LAYOUT - CRITICAL SECTION */
+.top-controls {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 15px !important;
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+    z-index: 100 !important;
+    backdrop-filter: blur(5px) !important;
+    gap: 10px !important;
+    overflow: hidden !important;
+    height: 50px !important;
+    box-sizing: border-box !important;
+}
+
+/* Compact App Title for single row */
+.app-title {
+    display: flex !important;
+    align-items: center !important;
+    padding-right: 10px !important;
+    flex-shrink: 0 !important;
+    min-width: 120px !important;
+}
+
+.app-logo {
+    margin-right: 8px !important;
+}
+
+.app-logo img {
+    height: 32px !important;
+    width: auto !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.app-title h1 {
+    margin: 0 !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    position: relative !important;
+    color: transparent !important;
+    background: linear-gradient(to right, var(--main-bg-start), var(--main-bg-end)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) !important;
+    font-family: 'Algerian', 'Copperplate Gothic', 'Copperplate', serif !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+}
+
+/* Force all buttons on one row */
+.buttons-section {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 2px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 2px !important;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+}
+
+/* Compact button sizing for single row */
+#fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+#increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+    background: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 4px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+    cursor: pointer !important;
+    font-size: 1em !important;
+    color: #444 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 30px !important;
+    height: 30px !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+    margin: 0 1px !important;
+    flex-shrink: 0 !important;
+    min-height: 30px !important;
+    min-width: 30px !important;
+    touch-action: manipulation !important;
+}
+
+#fileInputLabel:hover, #loadProgressLabel:hover, #exportButton:hover, #toggleIdsButton:hover, 
+#toggleLengthsButton:hover, #fitViewButton:hover, #saveAsButton:hover, #benchmarkButton:hover, #themeButton:hover {
+    background-color: #f0f0f0 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+#fileInputLabel:active, #loadProgressLabel:active, #exportButton:active, #toggleIdsButton:active, 
+#toggleLengthsButton:active, #fitViewButton:active, #saveAsButton:active, #benchmarkButton:active, #themeButton:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+#fileInputLabel i, #loadProgressLabel i, #saveProgressButton i, #saveAsButton i, #exportButton i, #insightsButton i, 
+#toggleIdsButton i, #toggleLengthsButton i, #fitViewButton i, #benchmarkButton i, #themeButton i {
+    margin: 0 !important;
+}
+
+#insightsButton.active, #toggleIdsButton.active, #toggleLengthsButton.active {
+    background: linear-gradient(145deg, #ffec99, #ffda4a) !important;
+    box-shadow: 0 0 15px rgba(255, 234, 0, 0.4), 0 0 20px rgba(255, 234, 0, 0.2) !important;
+    color: #d17d00 !important;
+}
+
+#saveProgressButton {
+    background: linear-gradient(145deg, #e6f7ff, #bae7ff) !important;
+    color: #0066cc !important;
+}
+
+#saveProgressButton:hover {
+    background: linear-gradient(145deg, #bae7ff, #91d5ff) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+#saveAsButton {
+    background: linear-gradient(145deg, #d6e4ff, #adc6ff) !important;
+    color: #0050b3 !important;
+}
+
+#saveAsButton:hover {
+    background: linear-gradient(145deg, #adc6ff, #85a5ff) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+#loadProgressLabel {
+    background: linear-gradient(145deg, #e6ffec, #b7eb8f) !important;
+    color: #008800 !important;
+}
+
+#loadProgressLabel:hover {
+    background: linear-gradient(145deg, #b7eb8f, #95de64) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+/* Maximize chart container */
+.container {
+    text-align: center;
+    background: var(--container-bg);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    width: 96vw;
+    height: calc(100vh - 70px) !important;
+    max-width: 1400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto 10px !important;
+    backdrop-filter: blur(5px);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    max-width: 100%;
+    touch-action: pan-x pan-y;
+}
+
+#myChart {
+    width: 100% !important;
+    height: 100% !important;
+    touch-action: pan-x pan-y;
+}
+
+.text-box {
+    position: absolute;
+    width: 170px;
+    padding: 10px;
+    font-size: 12px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+    touch-action: manipulation;
+}
+
+.text-box input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+    min-height: 32px;
+    font-size: 16px;
+    -webkit-appearance: none;
+}
+
+.text-box input:focus {
+    border-color: #26d0ce;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+}
+
+.close-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    transition: background-color 0.2s;
+    min-height: 32px;
+    min-width: 32px;
+    touch-action: manipulation;
+}
+
+.close-button:hover {
+    background-color: #ff1f1f;
+}
+
+.borehole-id, .borehole-length {
+    position: absolute;
+    font-size: 10px;
+    color: black;
+    pointer-events: none;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.9);
+}
+
+.borehole-length {
+    margin-top: 12px;
+}
+
+.compliance-text {
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 12px;
+    background-color: var(--container-bg);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    max-height: 65vh;
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+    -webkit-overflow-scrolling: touch;
+}
+
+#complianceContainer {
+    display: none;
+}
+
+.red {
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.green {
+    color: #52c41a;
+    font-weight: bold;
+}
+
+#spacingCompliance {
+    margin-top: 30px;
+}
+
+.separator {
+    width: 1px;
+    height: 30px;
+    background-color: #e0e0e0;
+    margin: 0 5px;
+}
+
+.position-controls {
+    display: flex;
+    gap: 5px;
+}
+
+#increasePointSizeButton:hover, #decreasePointSizeButton:hover,
+#labelUpButton:hover, #labelDownButton:hover, #labelLeftButton:hover, #labelRightButton:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#increasePointSizeButton {
+    color: #389e0d;
+}
+
+#decreasePointSizeButton {
+    color: #cf1322;
+}
+
+#labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton {
+    color: #1890ff;
+}
+
+/* Mobile optimizations - MAINTAIN SINGLE ROW */
+@media (max-width: 768px) {
+    .top-controls {
+        flex-direction: row !important;
+        padding: 5px 10px !important;
+        height: 45px !important;
+        gap: 5px !important;
+    }
+
+    .app-title {
+        padding-right: 5px !important;
+        min-width: 100px !important;
+    }
+
+    .app-title h1 {
+        font-size: 18px !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    .app-logo img {
+        height: 28px !important;
+    }
+
+    .buttons-section {
+        flex: 1 !important;
+        justify-content: flex-end !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 1px !important;
+        padding-right: 5px !important;
+    }
+
+    .container {
+        width: 95vw !important;
+        height: calc(100vh - 55px) !important;
+        margin-top: 50px !important;
+        padding: 8px !important;
+    }
+
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        font-size: 0.9em !important;
+        margin: 0 !important;
+        padding: 3px !important;
+    }
+}
+
+/* Tablet optimizations - MAINTAIN SINGLE ROW */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .top-controls {
+        padding: 6px 12px !important;
+        height: 48px !important;
+        gap: 8px !important;
+    }
+    
+    .app-title {
+        min-width: 110px !important;
+    }
+    
+    .app-title h1 {
+        font-size: 20px !important;
+        letter-spacing: 0.8px !important;
+    }
+    
+    .app-logo img {
+        height: 30px !important;
+    }
+    
+    .buttons-section {
+        gap: 1px !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        flex: 1 !important;
+        justify-content: flex-end !important;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        font-size: 1em !important;
+        margin: 0 !important;
+        padding: 4px !important;
+    }
+    
+    .container {
+        margin-top: 55px !important;
+        height: calc(100vh - 65px) !important;
+    }
+}
+
+/* Small phones - MAINTAIN SINGLE ROW */
+@media (max-width: 480px) {
+    .top-controls {
+        height: 42px !important;
+        padding: 4px 8px !important;
+        gap: 3px !important;
+    }
+    
+    .app-title {
+        min-width: 80px !important;
+    }
+    
+    .app-title h1 {
+        font-size: 16px !important;
+        letter-spacing: 0.3px !important;
+    }
+    
+    .app-logo img {
+        height: 24px !important;
+    }
+    
+    .buttons-section {
+        gap: 0px !important;
+        flex: 1 !important;
+        justify-content: flex-end !important;
+        overflow-x: auto !important;
+    }
+    
+    #fileInputLabel, #loadProgressLabel, #saveProgressButton, #saveAsButton, #exportButton, #insightsButton, #toggleIdsButton, #toggleLengthsButton, #fitViewButton, #downloadPDFBtn,
+    #increasePointSizeButton, #decreasePointSizeButton, #labelUpButton, #labelDownButton, #labelLeftButton, #labelRightButton, #benchmarkButton, #themeButton {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        min-height: 26px !important;
+        font-size: 0.85em !important;
+        padding: 2px !important;
+        margin: 0 !important;
+    }
+    
+    .container {
+        margin-top: 47px !important;
+        height: calc(100vh - 52px) !important;
+    }
+}
+
+#downloadPDFBtn {
+    background: linear-gradient(145deg, #fff1f0, #ffa39e) !important;
+    color: #cf1322 !important;
+}
+
+#downloadPDFBtn:hover {
+    background: linear-gradient(145deg, #ffa39e, #ff7875) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 90vw;
+    text-align: center;
+}
+
+.toast-message.show {
+    opacity: 1;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+    backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: absolute;
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    padding: 0;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    border-radius: 12px;
+    animation: slideIn 0.3s;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -30px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.modal-header {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--dialog-header-start) 0%, var(--dialog-header-end) 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    cursor: move;
+    touch-action: none;
+    user-select: none;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    text-align: right;
+    border-radius: 0 0 12px 12px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    min-height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close:hover {
+    color: #ffcccc;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    width: 160px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+    min-height: 40px;
+}
+
+.input-group input:focus {
+    border-color: #26d0ce;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+}
+
+.separator-line {
+    margin: 20px 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+}
+
+#applyBenchmarkButton, #cancelBenchmarkButton {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s;
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+#applyBenchmarkButton {
+    background: linear-gradient(135deg, var(--dialog-header-start) 0%, var(--dialog-header-end) 100%);
+    color: white;
+    margin-left: 10px;
+}
+
+#applyBenchmarkButton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#cancelBenchmarkButton {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+#cancelBenchmarkButton:hover {
+    background-color: #e0e0e0;
+}
+
+#benchmarkButton {
+    background: linear-gradient(145deg, #5cdbd3, #1890ff) !important;
+    color: white !important;
+}
+
+#themeButton {
+    background: linear-gradient(145deg, var(--button-gradient-1), var(--button-gradient-2)) !important;
+    color: var(--button-text) !important;
+}
+
+/* Theme Dropdown Styles */
+.theme-dropdown {
+    position: absolute;
+    background: white;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: none;
+    max-height: 400px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    right: auto;
+    left: 10px;
+    top: 65px;
+    -webkit-overflow-scrolling: touch;
+    backdrop-filter: blur(5px);
+}
+
+.theme-title {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.theme-option {
+    padding: 12px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+.theme-option:hover {
+    background-color: #f5f5f5;
+}
+
+.theme-option:active {
+    background-color: #e8e8e8;
+}
+
+.color-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+/* Color previews for each theme */
+.default-theme {
+    background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+}
+
+.ocean-theme {
+    background: linear-gradient(135deg, #0F2027 0%, #2C5364 100%);
+}
+
+.sunset-theme {
+    background: linear-gradient(135deg, #FF416C 0%, #FF9966 100%);
+}
+
+.forest-theme {
+    background: linear-gradient(135deg, #134E5E 0%, #71B280 100%);
+}
+
+.desert-theme {
+    background: linear-gradient(135deg, #BA8B02 0%, #FFDE0A 100%);
+}
+
+.royal-theme {
+    background: linear-gradient(135deg, #5C258D 0%, #4389A2 100%);
+}
+
+.neon-theme {
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
+    border: 1px solid #00ffff;
+}
+
+.mint-theme {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.autumn-theme {
+    background: linear-gradient(135deg, #8E2DE2 0%, #E1A829 100%);
+}
+
+.night-theme {
+    background: linear-gradient(135deg, #111111 0%, #333333 100%);
+    border: 1px solid #4286f4;
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+    .theme-dropdown {
+        width: calc(100vw - 40px);
+        left: 20px;
+        right: 20px;
+        max-width: 320px;
+    }
+}
