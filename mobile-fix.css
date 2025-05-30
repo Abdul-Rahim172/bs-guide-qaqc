@@ -1,4 +1,4 @@
-/* MOBILE FIX CSS - Force single row layout */
+/* MOBILE FIX CSS - Force single row layout and custom keypad fixes */
 
 /* Override existing top-controls */
 .top-controls {
@@ -67,6 +67,57 @@
     height: calc(100vh - 70px) !important;
 }
 
+/* Custom Keypad Mobile Fixes */
+.keypad-toggle {
+    position: fixed !important;
+    left: 0 !important;
+    top: 45% !important;
+    width: 35px !important;
+    height: 55px !important;
+    font-size: 16px !important;
+    z-index: 1002 !important;
+}
+
+.custom-keypad {
+    position: fixed !important;
+    left: -300px !important;
+    top: 40% !important;
+    width: 280px !important;
+    height: 400px !important;
+    transform: translateY(-50%) !important;
+}
+
+.custom-keypad.show {
+    left: 0 !important;
+}
+
+.keypad-grid {
+    gap: 12px !important;
+    padding: 15px !important;
+    height: 260px !important;
+}
+
+.keypad-btn {
+    font-size: 20px !important;
+    min-height: 45px !important;
+    min-width: 45px !important;
+}
+
+.keypad-header {
+    padding: 12px 15px !important;
+    font-size: 14px !important;
+}
+
+.keypad-actions {
+    padding: 0 15px 15px !important;
+}
+
+.keypad-action-btn {
+    padding: 10px !important;
+    font-size: 14px !important;
+    min-height: 40px !important;
+}
+
 /* Mobile specific overrides */
 @media (max-width: 768px) {
     .top-controls {
@@ -108,6 +159,33 @@
         margin-top: 50px !important;
         height: calc(100vh - 55px) !important;
     }
+    
+    /* Keypad mobile adjustments */
+    .keypad-toggle {
+        width: 32px !important;
+        height: 50px !important;
+        font-size: 14px !important;
+        top: 40% !important;
+    }
+    
+    .custom-keypad {
+        width: 270px !important;
+        height: 380px !important;
+        left: -290px !important;
+        top: 35% !important;
+    }
+    
+    .keypad-grid {
+        gap: 10px !important;
+        padding: 12px !important;
+        height: 240px !important;
+    }
+    
+    .keypad-btn {
+        font-size: 18px !important;
+        min-height: 42px !important;
+        min-width: 42px !important;
+    }
 }
 
 /* Tablet specific overrides */
@@ -139,6 +217,19 @@
     .container {
         margin-top: 55px !important;
         height: calc(100vh - 65px) !important;
+    }
+    
+    /* Keypad tablet adjustments */
+    .keypad-toggle {
+        width: 38px !important;
+        height: 58px !important;
+        font-size: 17px !important;
+    }
+    
+    .custom-keypad {
+        width: 290px !important;
+        height: 410px !important;
+        left: -310px !important;
     }
 }
 
@@ -182,4 +273,116 @@
         margin-top: 47px !important;
         height: calc(100vh - 52px) !important;
     }
+    
+    /* Keypad very small device adjustments */
+    .keypad-toggle {
+        width: 28px !important;
+        height: 45px !important;
+        font-size: 12px !important;
+        top: 35% !important;
+    }
+    
+    .custom-keypad {
+        width: 250px !important;
+        height: 360px !important;
+        left: -270px !important;
+        top: 30% !important;
+    }
+    
+    .keypad-grid {
+        gap: 8px !important;
+        padding: 10px !important;
+        height: 220px !important;
+    }
+    
+    .keypad-btn {
+        font-size: 16px !important;
+        min-height: 38px !important;
+        min-width: 38px !important;
+    }
+    
+    .keypad-header {
+        padding: 10px 12px !important;
+        font-size: 13px !important;
+    }
+    
+    .keypad-actions {
+        padding: 0 12px 12px !important;
+    }
+    
+    .keypad-action-btn {
+        padding: 8px !important;
+        font-size: 13px !important;
+        min-height: 36px !important;
+    }
+}
+
+/* Landscape mode keypad adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .keypad-toggle {
+        top: 25% !important;
+    }
+    
+    .custom-keypad {
+        height: 320px !important;
+        top: 15px !important;
+        transform: none !important;
+    }
+    
+    .keypad-grid {
+        height: 200px !important;
+        gap: 8px !important;
+    }
+    
+    .keypad-btn {
+        min-height: 35px !important;
+        min-width: 35px !important;
+        font-size: 16px !important;
+    }
+    
+    .keypad-header {
+        padding: 8px 12px !important;
+    }
+    
+    .keypad-actions {
+        padding: 0 12px 10px !important;
+    }
+}
+
+/* Prevent text input zoom on iOS */
+.text-box input {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+/* Improve touch targets for keypad */
+.keypad-btn, .keypad-action-btn, .keypad-close-btn {
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    touch-action: manipulation !important;
+}
+
+/* Ensure keypad is above everything */
+.custom-keypad {
+    z-index: 1001 !important;
+}
+
+.keypad-toggle {
+    z-index: 1002 !important;
+}
+
+/* Hide native input controls on mobile */
+.text-box input[readonly] {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    cursor: pointer !important;
+}
+
+/* Prevent page scroll when keypad is open */
+body.keypad-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
 }
