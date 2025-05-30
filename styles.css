@@ -512,6 +512,9 @@ button {
     min-height: 32px;
     font-size: 16px; /* Prevents zoom on iOS */
     -webkit-appearance: none;
+    /* Prevent native keyboard */
+    readonly: true;
+    cursor: pointer;
 }
 
 .text-box input:focus {
@@ -1123,4 +1126,265 @@ button {
         right: max(20px, env(safe-area-inset-right));
         transform: none;
     }
+}
+
+/* Custom Keypad Styles */
+.keypad-toggle {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--main-bg-start) 0%, var(--main-bg-end) 100%);
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    z-index: 1002;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    /* PWA touch improvements */
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+.keypad-toggle:hover {
+    opacity: 1;
+    width: 45px;
+}
+
+.keypad-toggle.active {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.keypad-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.custom-keypad {
+    position: fixed;
+    left: -320px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 420px;
+    background: white;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: all 0.3s ease;
+    /* PWA improvements */
+    -webkit-overflow-scrolling: touch;
+    backdrop-filter: blur(5px);
+}
+
+.custom-keypad.show {
+    left: 0;
+}
+
+.keypad-header {
+    background: linear-gradient(135deg, var(--main-bg-start) 0%, var(--main-bg-end) 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 0 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.keypad-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    /* PWA touch improvements */
+    min-height: 32px;
+    min-width: 32px;
+    touch-action: manipulation;
+}
+
+.keypad-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.keypad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    height: 280px;
+}
+
+.keypad-btn {
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* PWA touch improvements */
+    min-height: 50px;
+    min-width: 50px;
+    touch-action: manipulation;
+}
+
+.keypad-btn:hover {
+    background: linear-gradient(145deg, #e9ecef, #dee2e6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.keypad-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.keypad-zero {
+    grid-column: span 1;
+}
+
+.keypad-delete {
+    background: linear-gradient(145deg, #fff2f0, #ffccc7);
+    color: #cf1322;
+}
+
+.keypad-delete:hover {
+    background: linear-gradient(145deg, #ffccc7, #ffa39e);
+}
+
+.keypad-actions {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px;
+}
+
+.keypad-action-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /* PWA touch improvements */
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+.keypad-clear {
+    background: linear-gradient(145deg, #fff7e6, #ffd591);
+    color: #d46b08;
+}
+
+.keypad-clear:hover {
+    background: linear-gradient(145deg, #ffd591, #ffcc02);
+}
+
+.keypad-done {
+    background: linear-gradient(135deg, var(--main-bg-start) 0%, var(--main-bg-end) 100%);
+    color: white;
+}
+
+.keypad-done:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Mobile responsive adjustments for keypad */
+@media (max-width: 768px) {
+    .custom-keypad {
+        width: 280px;
+        height: 400px;
+        left: -300px;
+    }
+    
+    .keypad-grid {
+        gap: 12px;
+        padding: 15px;
+        height: 260px;
+    }
+    
+    .keypad-btn {
+        font-size: 20px;
+        min-height: 45px;
+        min-width: 45px;
+    }
+    
+    .keypad-toggle {
+        width: 35px;
+        height: 55px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-keypad {
+        width: 260px;
+        height: 380px;
+        left: -280px;
+    }
+    
+    .keypad-grid {
+        gap: 10px;
+        padding: 12px;
+        height: 240px;
+    }
+    
+    .keypad-btn {
+        font-size: 18px;
+        min-height: 40px;
+        min-width: 40px;
+    }
+    
+    .keypad-header {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .keypad-toggle {
+        width: 30px;
+        height: 50px;
+        font-size: 14px;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .custom-keypad {
+        height: 350px;
+        top: 10px;
+        transform: none;
+    }
+    
+    .keypad-grid {
+        height: 220px;
+    }
+    
+    .keypad-toggle {
+        top: 30%;
+    }
+}
+
+/* Active input highlight for keypad integration */
+.text-box input.keypad-active {
+    border-color: #26d0ce;
+    box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.3);
+    background-color: rgba(38, 208, 206, 0.05);
 }
