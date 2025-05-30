@@ -22,7 +22,6 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="mobile-fix.css">
     
     <!-- External Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -38,6 +37,41 @@
         <span>Install BS GUIDE app for better experience</span>
         <button id="installBtn" style="margin-left: 10px; padding: 5px 10px; background: white; color: #1a2980; border: none; border-radius: 3px; cursor: pointer;">Install</button>
         <button id="dismissBtn" style="margin-left: 5px; padding: 5px 10px; background: transparent; color: white; border: 1px solid white; border-radius: 3px; cursor: pointer;">Dismiss</button>
+    </div>
+
+    <!-- Custom Keypad Toggle Arrow -->
+    <div id="keypadToggle" class="keypad-toggle">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- Custom Keypad -->
+    <div id="customKeypad" class="custom-keypad">
+        <div class="keypad-header">
+            <span>Number Keypad</span>
+            <button id="keypadClose" class="keypad-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="keypad-grid">
+            <button class="keypad-btn" data-value="7">7</button>
+            <button class="keypad-btn" data-value="8">8</button>
+            <button class="keypad-btn" data-value="9">9</button>
+            <button class="keypad-btn" data-value="4">4</button>
+            <button class="keypad-btn" data-value="5">5</button>
+            <button class="keypad-btn" data-value="6">6</button>
+            <button class="keypad-btn" data-value="1">1</button>
+            <button class="keypad-btn" data-value="2">2</button>
+            <button class="keypad-btn" data-value="3">3</button>
+            <button class="keypad-btn keypad-zero" data-value="0">0</button>
+            <button class="keypad-btn" data-value=".">.</button>
+            <button class="keypad-btn keypad-delete" data-action="delete">
+                <i class="fas fa-backspace"></i>
+            </button>
+        </div>
+        <div class="keypad-actions">
+            <button id="keypadClear" class="keypad-action-btn keypad-clear">Clear</button>
+            <button id="keypadDone" class="keypad-action-btn keypad-done">Done</button>
+        </div>
     </div>
 
     <div class="top-controls">
