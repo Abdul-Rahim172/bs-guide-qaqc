@@ -103,6 +103,10 @@ if (action === 'import') {
   });
 }
 
+// Custom Keypad Variables
+let keypadVisible = false;
+let activeInput = null;
+
 // Original event listeners
 document.getElementById('fileInput').addEventListener('change', handleFile, false);
 document.getElementById('loadProgressInput').addEventListener('change', loadProgress, false);
@@ -124,6 +128,17 @@ document.getElementById('labelUpButton').addEventListener('click', moveLabelUp);
 document.getElementById('labelDownButton').addEventListener('click', moveLabelDown);
 document.getElementById('labelLeftButton').addEventListener('click', moveLabelLeft);
 document.getElementById('labelRightButton').addEventListener('click', moveLabelRight);
+
+// Keypad event listeners
+document.getElementById('keypadToggle').addEventListener('click', toggleKeypad);
+document.getElementById('keypadClose').addEventListener('click', hideKeypad);
+document.getElementById('keypadClear').addEventListener('click', clearActiveInput);
+document.getElementById('keypadDone').addEventListener('click', hideKeypad);
+
+// Keypad button event listeners
+document.querySelectorAll('.keypad-btn').forEach(btn => {
+    btn.addEventListener('click', handleKeypadInput);
+});
 
 // Benchmark dialog buttons
 document.getElementById('applyBenchmarkButton').addEventListener('click', applyBenchmarks);
@@ -154,6 +169,20 @@ document.addEventListener('click', function(event) {
         event.target !== themeButton && 
         !themeButton.contains(event.target)) {
         themeDropdown.style.display = 'none';
+    }
+    
+    // Close keypad when clicking outside
+    const customKeypad = document.getElementById('customKeypad');
+    const keypadToggle = document.getElementById('keypadToggle');
+    
+    if (keypadVisible && 
+        !customKeypad.contains(event.target) && 
+        !keypadToggle.contains(event.target) &&
+        !event.target.classList.contains('keypad-input')) {
+        // Don't close if clicking on an input that should use keypad
+        if (!event.target.matches('.text-box input')) {
+            hideKeypad();
+        }
     }
 });
 
@@ -222,6 +251,106 @@ const themeColors = {
         selected: 'rgba(66, 134, 244, 1.0)'
     }
 };
+
+// Custom Keypad Functions
+function toggleKeypad() {
+    if (keypadVisible) {
+        hideKeypad();
+    } else {
+        showKeypad();
+    }
+}
+
+function showKeypad() {
+    const keypad = document.getElementById('customKeypad');
+    const toggle = document.getElementById('keypadToggle');
+    
+    keypad.classList.add('show');
+    toggle.classList.add('active');
+    keypadVisible = true;
+}
+
+function hideKeypad() {
+    const keypad = document.getElementById('customKeypad');
+    const toggle = document.getElementById('keypadToggle');
+    
+    keypad.classList.remove('show');
+    toggle.classList.remove('active');
+    keypadVisible = false;
+    
+    // Clear active input styling
+    if (activeInput) {
+        activeInput.classList.remove('keypad-active');
+        activeInput = null;
+    }
+}
+
+function handleKeypadInput(event) {
+    if (!activeInput) return;
+    
+    const value = event.target.getAttribute('data-value');
+    const action = event.target.getAttribute('data-action');
+    
+    if (action === 'delete') {
+        // Remove last character
+        activeInput.value = activeInput.value.slice(0, -1);
+    } else if (value) {
+        // Add the clicked value
+        activeInput.value += value;
+    }
+    
+    // Trigger change event to update stored values
+    const changeEvent = new Event('change', { bubbles: true });
+    activeInput.dispatchEvent(changeEvent);
+}
+
+function clearActiveInput() {
+    if (!activeInput) return;
+    
+    activeInput.value = '';
+    // Trigger change event to update stored values
+    const changeEvent = new Event('change', { bubbles: true });
+    activeInput.dispatchEvent(changeEvent);
+}
+
+function setupInputKeypadIntegration(input) {
+    // Prevent native keyboard
+    input.setAttribute('readonly', true);
+    input.setAttribute('inputmode', 'none');
+    
+    // Add click/focus event to show keypad
+    input.addEventListener('click', function(e) {
+        e.preventDefault();
+        setActiveInput(this);
+        if (!keypadVisible) {
+            showKeypad();
+        }
+    });
+    
+    input.addEventListener('focus', function(e) {
+        e.preventDefault();
+        setActiveInput(this);
+        if (!keypadVisible) {
+            showKeypad();
+        }
+    });
+    
+    // Prevent context menu on long press (mobile)
+    input.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+}
+
+function setActiveInput(input) {
+    // Remove previous active styling
+    if (activeInput) {
+        activeInput.classList.remove('keypad-active');
+    }
+    
+    // Set new active input
+    activeInput = input;
+    activeInput.classList.add('keypad-active');
+}
 
 // PWA-specific storage functions
 function saveToIndexedDB(key, data) {
@@ -748,7 +877,7 @@ function showTextBox(position, datasetIndex, index) {
     const lengthVal = storedValues[datasetIndex]?.[index]?.length || '';
     const planLengthVal = storedValues[datasetIndex]?.[index]?.planLength || '';
 
-    // Create input fields
+    // Create input fields with keypad integration
     textBox.innerHTML = `
         <input type="text" placeholder="Burden" value="${burdenVal}" onchange="updateStoredValue(${datasetIndex}, ${index}, 'burden', this.value)" /><br>
         <input type="text" placeholder="Spacing" value="${spacingVal}" onchange="updateStoredValue(${datasetIndex}, ${index}, 'spacing', this.value)" /><br>
@@ -760,6 +889,11 @@ function showTextBox(position, datasetIndex, index) {
     // Add close button and append to container
     textBox.appendChild(closeButton);
     document.querySelector('.container').appendChild(textBox);
+    
+    // Setup keypad integration for all inputs in this text box
+    textBox.querySelectorAll('input').forEach(input => {
+        setupInputKeypadIntegration(input);
+    });
 }
 
 function updateStoredValue(datasetIndex, index, field, value) {
