@@ -106,6 +106,7 @@ if (action === 'import') {
 // Custom Keypad Variables
 let keypadVisible = false;
 let activeInput = null;
+let draggingTextBox = false;
 
 // Original event listeners
 document.getElementById('fileInput').addEventListener('change', handleFile, false);
@@ -159,11 +160,12 @@ document.querySelectorAll('.theme-option').forEach(option => {
     });
 });
 
-// Close theme dropdown when clicking outside of it
+// UPDATED: Modified click event to only close keypad on specific actions
 document.addEventListener('click', function(event) {
     const themeDropdown = document.getElementById('themeDropdown');
     const themeButton = document.getElementById('themeButton');
     
+    // Close theme dropdown when clicking outside of it
     if (themeDropdown.style.display === 'block' && 
         !themeDropdown.contains(event.target) && 
         event.target !== themeButton && 
@@ -171,19 +173,7 @@ document.addEventListener('click', function(event) {
         themeDropdown.style.display = 'none';
     }
     
-    // Close keypad when clicking outside
-    const customKeypad = document.getElementById('customKeypad');
-    const keypadToggle = document.getElementById('keypadToggle');
-    
-    if (keypadVisible && 
-        !customKeypad.contains(event.target) && 
-        !keypadToggle.contains(event.target) &&
-        !event.target.classList.contains('keypad-input')) {
-        // Don't close if clicking on an input that should use keypad
-        if (!event.target.matches('.text-box input')) {
-            hideKeypad();
-        }
-    }
+    // REMOVED: Keypad auto-close functionality - now only closes via Done/Close buttons
 });
 
 const storedValues = {};
@@ -313,25 +303,39 @@ function clearActiveInput() {
     activeInput.dispatchEvent(changeEvent);
 }
 
+// UPDATED: Modified input setup for cursor visibility
 function setupInputKeypadIntegration(input) {
-    // Prevent native keyboard
-    input.setAttribute('readonly', true);
+    // Don't make readonly - this allows cursor to show
+    input.removeAttribute('readonly');
+    
+    // Prevent native keyboard on mobile devices
     input.setAttribute('inputmode', 'none');
     
-    // Add click/focus event to show keypad
+    // Add click/focus event to show keypad and set active input
     input.addEventListener('click', function(e) {
         e.preventDefault();
         setActiveInput(this);
         if (!keypadVisible) {
             showKeypad();
         }
+        // Focus the input to show cursor
+        this.focus();
     });
     
     input.addEventListener('focus', function(e) {
-        e.preventDefault();
         setActiveInput(this);
         if (!keypadVisible) {
             showKeypad();
+        }
+    });
+    
+    // Prevent physical keyboard input, only allow keypad input
+    input.addEventListener('keydown', function(e) {
+        // Allow only navigation keys, backspace, delete, and tab
+        const allowedKeys = ['Tab', 'Escape', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+        
+        if (!allowedKeys.includes(e.key) && e.key !== 'Backspace' && e.key !== 'Delete') {
+            e.preventDefault();
         }
     });
     
@@ -350,6 +354,75 @@ function setActiveInput(input) {
     // Set new active input
     activeInput = input;
     activeInput.classList.add('keypad-active');
+}
+
+// NEW: Text box dragging functionality
+function setupTextBoxDrag(textBox) {
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+    
+    // Create a drag handle (we'll use the whole text box as drag handle)
+    textBox.style.cursor = 'move';
+    
+    textBox.addEventListener('mousedown', startDrag);
+    textBox.addEventListener('touchstart', startDrag);
+    
+    function startDrag(e) {
+        // Don't start drag if clicking on input, button, or already dragging
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || draggingTextBox) {
+            return;
+        }
+        
+        isDragging = true;
+        draggingTextBox = true;
+        
+        const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+        
+        startX = clientX;
+        startY = clientY;
+        startLeft = parseInt(window.getComputedStyle(textBox).left);
+        startTop = parseInt(window.getComputedStyle(textBox).top);
+        
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag);
+        document.addEventListener('mouseup', stopDrag);
+        document.addEventListener('touchend', stopDrag);
+        
+        e.preventDefault();
+    }
+    
+    function drag(e) {
+        if (!isDragging) return;
+        
+        const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+        
+        const deltaX = clientX - startX;
+        const deltaY = clientY - startY;
+        
+        const newLeft = startLeft + deltaX;
+        const newTop = startTop + deltaY;
+        
+        // Keep within viewport bounds
+        const maxLeft = window.innerWidth - textBox.offsetWidth;
+        const maxTop = window.innerHeight - textBox.offsetHeight;
+        
+        textBox.style.left = Math.max(0, Math.min(newLeft, maxLeft)) + 'px';
+        textBox.style.top = Math.max(0, Math.min(newTop, maxTop)) + 'px';
+        
+        e.preventDefault();
+    }
+    
+    function stopDrag() {
+        isDragging = false;
+        draggingTextBox = false;
+        
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('touchmove', drag);
+        document.removeEventListener('mouseup', stopDrag);
+        document.removeEventListener('touchend', stopDrag);
+    }
 }
 
 // PWA-specific storage functions
@@ -894,6 +967,9 @@ function showTextBox(position, datasetIndex, index) {
     textBox.querySelectorAll('input').forEach(input => {
         setupInputKeypadIntegration(input);
     });
+    
+    // UPDATED: Setup drag functionality for this text box
+    setupTextBoxDrag(textBox);
 }
 
 function updateStoredValue(datasetIndex, index, field, value) {
