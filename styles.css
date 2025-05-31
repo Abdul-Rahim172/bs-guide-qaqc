@@ -486,6 +486,7 @@ button {
     touch-action: pan-x pan-y;
 }
 
+/* UPDATED: Text box styles for draggable functionality and cursor visibility */
 .text-box {
     position: absolute;
     width: 170px;
@@ -498,8 +499,14 @@ button {
     z-index: 90;
     /* PWA touch improvements */
     touch-action: manipulation;
+    /* Draggable cursor when not hovering over inputs */
+    cursor: move;
+    /* Add a subtle header area indicator */
+    background: linear-gradient(to bottom, #f8f9fa 0, #f8f9fa 20px, white 20px);
+    border-top: 3px solid var(--main-bg-start);
 }
 
+/* UPDATED: Text box input styles for cursor visibility */
 .text-box input {
     width: calc(100% - 20px);
     padding: 8px; /* Increased for better touch targets */
@@ -512,15 +519,35 @@ button {
     min-height: 32px;
     font-size: 16px; /* Prevents zoom on iOS */
     -webkit-appearance: none;
-    /* Prevent native keyboard */
-    readonly: true;
-    cursor: pointer;
+    /* UPDATED: Allow cursor to show - remove readonly and allow focus */
+    cursor: text !important;
+    /* Allow text selection */
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
 }
 
 .text-box input:focus {
     border-color: #26d0ce;
     outline: none;
     box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+    /* Ensure cursor is visible when focused */
+    caret-color: #26d0ce;
+}
+
+/* Override cursor for inputs when inside text box */
+.text-box input:hover {
+    cursor: text !important;
+}
+
+/* Make inputs not draggable so text box doesn't drag when clicking on input */
+.text-box input {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 .close-button {
