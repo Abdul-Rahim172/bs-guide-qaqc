@@ -298,7 +298,7 @@ function clearActiveInput() {
     if (!activeInput) return;
     
     activeInput.value = '';
-    // Trigger change event to update stored values
+    // Trigger change event to update stored values (which will now properly clear the data)
     const changeEvent = new Event('change', { bubbles: true });
     activeInput.dispatchEvent(changeEvent);
 }
@@ -576,16 +576,19 @@ function updateChartColors() {
             const index = context.dataIndex;
             const id = context.chart.data.datasets[context.datasetIndex].data[index].id;
             
-            // Find if this point has data
+            // Find if this point has valid data
             let hasData = false;
             Object.values(storedValues[0] || {}).forEach(point => {
-                if (point.id === id && (
-                    point.burden !== undefined || 
-                    point.spacing !== undefined || 
-                    point.stemming !== undefined || 
-                    point.length !== undefined
-                )) {
-                    hasData = true;
+                if (point.id === id) {
+                    // Check if any field has a valid numeric value
+                    const hasValidBurden = point.burden !== undefined && !isNaN(point.burden) && point.burden !== '';
+                    const hasValidSpacing = point.spacing !== undefined && !isNaN(point.spacing) && point.spacing !== '';
+                    const hasValidStemming = point.stemming !== undefined && !isNaN(point.stemming) && point.stemming !== '';
+                    const hasValidLength = point.length !== undefined && !isNaN(point.length) && point.length !== '';
+                    
+                    if (hasValidBurden || hasValidSpacing || hasValidStemming || hasValidLength) {
+                        hasData = true;
+                    }
                 }
             });
             
@@ -979,7 +982,17 @@ function updateStoredValue(datasetIndex, index, field, value) {
     if (!storedValues[datasetIndex][index]) {
         storedValues[datasetIndex][index] = { id: `ID-${index + 1}` };
     }
-    storedValues[datasetIndex][index][field] = parseFloat(value);
+    
+    // Parse the value
+    const numericValue = parseFloat(value);
+    
+    // If the input is empty or not a valid number, remove the field
+    if (value === '' || value === null || value === undefined || isNaN(numericValue)) {
+        delete storedValues[datasetIndex][index][field];
+    } else {
+        // Store the valid numeric value
+        storedValues[datasetIndex][index][field] = numericValue;
+    }
     
     // Update the point color to match theme
     updateChartColors();
