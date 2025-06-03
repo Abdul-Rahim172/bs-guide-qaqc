@@ -1252,8 +1252,8 @@ Measurements: ${totalBurden}<br>
 Average: ${formatValue(avgBurden)}<br>
 Max: ${formatValue(maxBurden)}<br>
 Min: ${formatValue(minBurden)}<br>
-Above ${ (burdenValue + burdenTolerance).toFixed(1) }: ${aboveBurden}<br>
-Below ${ (burdenValue - burdenTolerance).toFixed(1) }: ${belowBurden}<br><br>
+Over burden: ${aboveBurden}<br>
+Under burden: ${belowBurden}<br><br>
 `;
 
     const spacingInfo = `
@@ -1263,8 +1263,8 @@ Measurements: ${totalSpacing}<br>
 Average: ${formatValue(avgSpacing)}<br>
 Max: ${formatValue(maxSpacing)}<br>
 Min: ${formatValue(minSpacing)}<br>
-Above ${ (spacingValue + spacingTolerance).toFixed(1) }: ${aboveSpacing}<br>
-Below ${ (spacingValue - spacingTolerance).toFixed(1) }: ${belowSpacing}<br><br>
+Over spacing: ${aboveSpacing}<br>
+Under spacing: ${belowSpacing}<br><br>
 `;
 
     const stemmingInfo = `
@@ -1274,8 +1274,8 @@ Measurements: ${totalStemming}<br>
 Average: ${formatValue(avgStemming)}<br>
 Max: ${formatValue(maxStemming)}<br>
 Min: ${formatValue(minStemming)}<br>
-Above ${ (stemmingValue + stemmingTolerance).toFixed(1) }: ${aboveStemming}<br>
-Below ${ (stemmingValue - stemmingTolerance).toFixed(1) }: ${belowStemming}<br><br>
+Over Stemming: ${aboveStemming}<br>
+Under Stemming: ${belowStemming}<br><br>
 `;
 
     const lengthInfo = `
