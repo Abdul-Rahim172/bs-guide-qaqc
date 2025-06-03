@@ -1274,8 +1274,8 @@ Measurements: ${totalStemming}<br>
 Average: ${formatValue(avgStemming)}<br>
 Max: ${formatValue(maxStemming)}<br>
 Min: ${formatValue(minStemming)}<br>
-Over Stemming: ${aboveStemming}<br>
-Under Stemming: ${belowStemming}<br><br>
+Above ${ (stemmingValue + stemmingTolerance).toFixed(1) }: ${aboveStemming}<br>
+Below ${ (stemmingValue - stemmingTolerance).toFixed(1) }: ${belowStemming}<br><br>
 `;
 
     const lengthInfo = `
@@ -2219,9 +2219,15 @@ function downloadPDF() {
                 if (title === "LENGTH") {
                     doc.text(`Overdrill: ${metricData.above}`, startX, textStartY + 35);
                     doc.text(`Underdrill: ${metricData.below}`, startX, textStartY + 42);
-                } else {
-                    doc.text(`Above ${(targetValue + tolerance).toFixed(1)}: ${metricData.above}`, startX, textStartY + 35);
-                    doc.text(`Below ${(targetValue - tolerance).toFixed(1)}: ${metricData.below}`, startX, textStartY + 42);
+                } else if (title === "BURDEN") {
+                    doc.text(`Over burden: ${metricData.above}`, startX, textStartY + 35);
+                    doc.text(`Under burden: ${metricData.below}`, startX, textStartY + 42);
+                } else if (title === "SPACING") {
+                    doc.text(`Over spacing: ${metricData.above}`, startX, textStartY + 35);
+                    doc.text(`Under spacing: ${metricData.below}`, startX, textStartY + 42);
+                } else if (title === "STEMMING") {
+                    doc.text(`Over stemming: ${metricData.above}`, startX, textStartY + 35);
+                    doc.text(`Under stemming: ${metricData.below}`, startX, textStartY + 42);
                 }
 
                 // Create deviation chart - align top with compliance text
