@@ -148,7 +148,7 @@
     --button-text: white;
 }
 
-/* Add font-face for Algerian if you want to ensure it's available */
+/* font-face for Algerian  */
 @font-face {
     font-family: 'Algerian';
     src: url('algerian.ttf') format('truetype');
@@ -235,7 +235,7 @@ button {
     touch-action: manipulation;
 }
 
-/* Modified Top Controls to include app title and adjust button layout */
+/* Top Controls to include app title and adjust button layout */
 .top-controls {
     position: fixed;
     top: 0;
@@ -258,7 +258,7 @@ button {
     padding-right: max(20px, env(safe-area-inset-right));
 }
 
-/* New App Title Styles */
+/* App Title Styles */
 .app-title {
     display: flex;
     align-items: center;
@@ -486,7 +486,7 @@ button {
     touch-action: pan-x pan-y;
 }
 
-/* UPDATED: Text box styles for draggable functionality and cursor visibility */
+/* Text box styles for draggable functionality and cursor visibility */
 .text-box {
     position: absolute;
     width: 170px;
@@ -506,7 +506,7 @@ button {
     border-top: 3px solid var(--main-bg-start);
 }
 
-/* UPDATED: Text box input styles for cursor visibility */
+/* Text box input styles for cursor visibility */
 .text-box input {
     width: calc(100% - 20px);
     padding: 8px; /* Increased for better touch targets */
