@@ -160,7 +160,7 @@ document.querySelectorAll('.theme-option').forEach(option => {
     });
 });
 
-// UPDATED: Modified click event to only close keypad on specific actions
+// Modified click event to only close keypad on specific actions
 document.addEventListener('click', function(event) {
     const themeDropdown = document.getElementById('themeDropdown');
     const themeButton = document.getElementById('themeButton');
@@ -173,7 +173,7 @@ document.addEventListener('click', function(event) {
         themeDropdown.style.display = 'none';
     }
     
-    // REMOVED: Keypad auto-close functionality - now only closes via Done/Close buttons
+    // Closes via Done/Close buttons
 });
 
 const storedValues = {};
@@ -198,7 +198,7 @@ let labelOffsetY = -20; // Vertical offset for labels (default: above the point)
 let currentFileHandle = null; // Store the current file handle for save operations
 let currentTheme = "default"; // Current theme
 
-// NEW: Define theme colors for points
+// Define theme colors for points
 const themeColors = {
     default: {
         point: 'rgba(20, 30, 97, 0.95)',
@@ -303,7 +303,7 @@ function clearActiveInput() {
     activeInput.dispatchEvent(changeEvent);
 }
 
-// UPDATED: Modified input setup for cursor visibility
+// Input setup for cursor visibility
 function setupInputKeypadIntegration(input) {
     // Don't make readonly - this allows cursor to show
     input.removeAttribute('readonly');
@@ -356,12 +356,12 @@ function setActiveInput(input) {
     activeInput.classList.add('keypad-active');
 }
 
-// NEW: Text box dragging functionality
+// Text box dragging functionality
 function setupTextBoxDrag(textBox) {
     let isDragging = false;
     let startX, startY, startLeft, startTop;
     
-    // Create a drag handle (we'll use the whole text box as drag handle)
+    // Create a drag handle
     textBox.style.cursor = 'move';
     
     textBox.addEventListener('mousedown', startDrag);
