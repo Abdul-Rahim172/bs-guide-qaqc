@@ -1,8 +1,10 @@
 BS GUIDE - Quality Assurance & Quality Control Application
 Project Overview
 BS GUIDE is a comprehensive Progressive Web Application (PWA) to simplify and streamline the Quality Assurance and Quality Control (QAQC) workflow for engineers in the field. The app enables QAQC engineers to collect drill hole data using tablets, including Burden, Spacing, Stemming, and Lengths, while providing real-time insights and comprehensive reporting.
+
 Live Application
 https://bs-guide.netlify.app/
+
 Key Features
 Data Management
 •	Excel/CSV Import: Support for .xlsx, .xls, and .csv files
@@ -10,12 +12,14 @@ Data Management
 •	Custom Numeric Keypad: On-screen keypad prevents device keyboard interference 
 •	Draggable Input Boxes: Move data entry boxes anywhere on screen 
 •	Auto-save Progress: Save and load project files (.rah format)
+
 Analytics & Reporting
 •	Live Compliance Stats: Instant feedback on measurement compliance.
 •	Color-coded Visualization: Points change color based on data availability 
 •	Customizable Benchmarks: Set targets and tolerances for all parameters 
 •	PDF Audit Reports: Generate comprehensive blast audit reports in one click.
 •	Excel Export: Easily export collected data for further analysis
+
 User Experience
 •	10 Stunning Themes: Choose from themes like Ocean Depths, Neon, and Night Mode.
 •	Responsive Design: Optimized for use on tablets and phones. Works on desktops 
